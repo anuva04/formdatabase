@@ -12,8 +12,11 @@ router.post('/users', async (req, res) => {
         await user.save()
         sendWelcomeEmail(user.email, user.firstname)
         const token = await user.generateAuthToken()
-
-        res.status(201).send("Data received \n" + JSON.stringify(req.body));
+        //req.flash('success', 'Thanks for the message! I‘ll be in touch :)');
+       // res.render('success', {layout: false});
+        //res.status(201).send("Data received \n" + JSON.stringify(req.body));
+        res.status(201)
+        res.render('index', {success: 'Record Inserted Successfully'})
     } catch (e) {
         res.status(400).send(e)
     }
