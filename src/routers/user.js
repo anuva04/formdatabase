@@ -1,5 +1,6 @@
 const express = require('express')
 const multer = require('multer')
+const bodyParser = require('body-parser')
 const router = new express.Router()
 const auth = require('../middleware/auth')
 const {sendWelcomeEmail, sendCancellationEmail} = require('../emails/account')
@@ -12,7 +13,7 @@ router.post('/users', async (req, res) => {
         sendWelcomeEmail(user.email, user.firstname)
         const token = await user.generateAuthToken()
 
-        res.status(201).send({user, token})
+        res.status(201).send("Data received \n" + JSON.stringify(req.body));
     } catch (e) {
         res.status(400).send(e)
     }

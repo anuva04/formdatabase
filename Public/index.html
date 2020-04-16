@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            Form Database
+        </title>
+        <style>
+            body{
+                margin: 0;
+                padding: 0;
+                font-family: sans-serif;
+                background: url(bg.jpg) no-repeat;
+                background-size: cover;
+            }
+            .login-box{
+                width: 280px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                color: white;
+                background: rgba(15, 15, 15, 0.8);
+                padding: 20px;
+            }
+            .login-box h1 {
+                float: center;
+                font-size: 40px;
+                border-bottom: 6px solid #4caf50;
+                margin-bottom: 50px;
+                padding: 13px 0;
+            }
+            .textbox {
+                width: 100%;
+                overflow: hidden;
+                font-size: 20px;
+                padding: 8px 0;
+                margin: 8px 0;
+            }
+            .textbox input {
+                border: none;
+                border-bottom: 1px solid #4caf50;
+                outline: none;
+                background: none;
+                color: white;
+                font-size: 18px;
+                width: 100%;
+                float: left;
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+            .textbox input[type="submit"]{
+                width: 100%;
+                border: 2px solid #4caf50;
+                padding: 5px;
+                font-size: 18px;
+                cursor: pointer;
+                margin: 12px 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="login-box">
+            <h1>
+                Register
+            </h1>
+            <div class="textbox">
+                <form method="POST" action="/users">
+                    <input type="text" name="firstname" required placeholder="First Name">
+                    <input type="text" name="lastname" required placeholder="Last Name">
+                    <input type="text" name="password" required placeholder="Password">
+                    <input type="text" name="email" required placeholder="Email">
+                    <input type="number" name="phone" placeholder="Phone Number">
+                    <input type="text" name="message" required placeholder="Message">
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
